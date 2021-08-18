@@ -52,9 +52,9 @@ export = class Customer {
     addresses?: Address[];
     dateOfBirth?: string;
     metadata?: object;
-    type: string;
-    individualDetail: IndividualDetail;
-    businessDetail: BusinessDetail;
+    type?: string;
+    individualDetail?: IndividualDetail;
+    businessDetail?: BusinessDetail;
   }): Promise<object>;
   getCustomer(data: { id: string }): Promise<object>;
   getCustomerByReferenceID(data: { referenceID: string }): Promise<object>;
