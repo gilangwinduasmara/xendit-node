@@ -10,6 +10,30 @@ interface Address {
   postalCode?: string;
 }
 
+interface Employment {
+  employmentName?: string;
+  natureOfBusiness?: string;
+  roleDescription?: string;
+}
+
+interface IndividualDetail {
+  givenNames: string;
+  surname?: string;
+  nationality?: string;
+  placeOfBirth?: string;
+  dateOfBirth?: string;
+  gender?: string;
+  employment?: Employment;
+}
+
+interface BusinessDetail {
+  businessName: string;
+  businessType: string;
+  natureOfBusiness?: string;
+  businessDomicile?: string;
+  dateOfRegistration?: string;
+}
+
 export = class Customer {
   constructor({});
   static _constructorWithInjectedXenditOpts: (
@@ -28,6 +52,9 @@ export = class Customer {
     addresses?: Address[];
     dateOfBirth?: string;
     metadata?: object;
+    type: string;
+    individualDetail: IndividualDetail;
+    businessDetail: BusinessDetail;
   }): Promise<object>;
   getCustomer(data: { id: string }): Promise<object>;
   getCustomerByReferenceID(data: { referenceID: string }): Promise<object>;

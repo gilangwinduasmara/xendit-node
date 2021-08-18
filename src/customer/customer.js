@@ -61,6 +61,9 @@ Customer.prototype.createCustomer = function(data) {
           : [],
         date_of_birth: data.dateOfBirth,
         metadata: data.metadata,
+        type: data.type,
+        individual_detail: data.individual_detail,
+        business_detail: data.business_detail,
       }),
     })
       .then(resolve)
